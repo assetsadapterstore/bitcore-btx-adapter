@@ -16,8 +16,10 @@
 package bitcore_btx
 
 import (
+	"fmt"
 	"github.com/blocktree/bitcoin-adapter/bitcoin"
 	"github.com/blocktree/bitcore-btx-adapter/bitcore_btx_addrdec"
+	"github.com/blocktree/go-owcdrivers/addressEncoder"
 	"github.com/blocktree/go-owcrypt"
 )
 
@@ -114,5 +116,30 @@ func (decoder *addressDecoder) WIFToPrivateKey(wif string, isTestnet bool) ([]by
 	}
 
 	return priv, err
+
+}
+
+//ScriptPubKeyToBech32Address scriptPubKey转Bech32地址
+func (decoder *addressDecoder) ScriptPubKeyToBech32Address(scriptPubKey []byte) (string, error) {
+	var (
+		hash []byte
+	)
+
+	cfg := bitcore_btx_addrdec.BTX_mainnetAddressBech32V0
+	if decoder.wm.Config.IsTestNet {
+		cfg = bitcore_btx_addrdec.BTX_testnetAddressBech32V0
+	}
+
+	if len(scriptPubKey) == 20 || len(scriptPubKey) == 32 {
+
+		hash = scriptPubKey[:]
+
+		address := addressEncoder.AddressEncode(hash, cfg)
+
+		return address, nil
+
+	} else {
+		return "", fmt.Errorf("scriptPubKey length is invalid")
+	}
 
 }

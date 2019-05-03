@@ -15,6 +15,8 @@ var (
 	BTX_testnetPrivateWIFCompressed = addressEncoder.AddressType{EncodeType: "base58", Alphabet: btcAlphabet, ChecksumType: "doubleSHA256", HashType: "", HashLen: 32, Prefix: []byte{0xEF}, Suffix: []byte{0x01}}
 	BTX_mainnetAddressP2SH          = addressEncoder.AddressType{EncodeType: "base58", Alphabet: btcAlphabet, ChecksumType: "doubleSHA256", HashType: "h160", HashLen: 20, Prefix: []byte{0x7d}, Suffix: nil}
 	BTX_testnetAddressP2SH          = addressEncoder.AddressType{EncodeType: "base58", Alphabet: btcAlphabet, ChecksumType: "doubleSHA256", HashType: "h160", HashLen: 20, Prefix: []byte{0xC4}, Suffix: nil}
+	BTX_mainnetAddressBech32V0      = addressEncoder.AddressType{"bech32", btcAlphabet, "btx", "h160", 20, nil, nil}
+	BTX_testnetAddressBech32V0      = addressEncoder.AddressType{"bech32", btcAlphabet, "tb", "h160", 20, nil, nil}
 
 	Default = AddressDecoderV2{}
 )

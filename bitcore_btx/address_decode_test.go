@@ -46,3 +46,18 @@ func TestAddressDecoder_AddressDecode(t *testing.T) {
 	p2shHash, _ := bitcore_btx_addrdec.Default.AddressDecode(p2shAddr, bitcore_btx_addrdec.BTX_mainnetAddressP2SH)
 	t.Logf("p2shHash: %s", hex.EncodeToString(p2shHash))
 }
+
+func TestAddressDecoder_ScriptPubKeyToBech32Address(t *testing.T) {
+
+	scriptPubKey, _ := hex.DecodeString("002079db247b3da5d5e33e036005911b9341a8d136768a001e9f7b86c5211315e3e1")
+
+	addr, err := ScriptPubKeyToBech32Address(scriptPubKey, false)
+	if err != nil {
+		t.Errorf("ScriptPubKeyToBech32Address failed unexpected error: %v\n", err)
+		return
+	}
+	t.Logf("addr: %s", addr)
+
+
+	t.Logf("addr: %s", addr)
+}
