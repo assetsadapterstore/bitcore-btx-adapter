@@ -130,9 +130,9 @@ func (decoder *addressDecoder) ScriptPubKeyToBech32Address(scriptPubKey []byte) 
 		cfg = bitcore_btx_addrdec.BTX_testnetAddressBech32V0
 	}
 
-	if len(scriptPubKey) == 20 || len(scriptPubKey) == 32 {
+	if len(scriptPubKey) == 22 || len(scriptPubKey) == 34 {
 
-		hash = scriptPubKey[:]
+		hash = scriptPubKey[2:]
 
 		address := addressEncoder.AddressEncode(hash, cfg)
 
