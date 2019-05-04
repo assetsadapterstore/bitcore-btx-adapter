@@ -18,7 +18,7 @@ package bitcore_btx
 import (
 	"fmt"
 	"github.com/blocktree/bitcoin-adapter/bitcoin"
-	"github.com/blocktree/bitcore-btx-adapter/bitcore_btx_addrdec"
+	"github.com/assetsadapterstore/bitcore-btx-adapter/bitcore_btx_addrdec"
 	"github.com/blocktree/go-owcdrivers/addressEncoder"
 	"github.com/blocktree/go-owcrypt"
 )

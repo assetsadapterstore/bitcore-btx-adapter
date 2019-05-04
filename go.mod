@@ -1,4 +1,4 @@
-module github.com/blocktree/bitcore-btx-adapter
+module github.com/assetsadapterstore/bitcore-btx-adapter
 
 go 1.12
 
