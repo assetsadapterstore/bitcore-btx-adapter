@@ -124,11 +124,12 @@ func TestTransfer(t *testing.T) {
 	//to := "2M3XABYEqqWf5CC9RZjRKb8dwJKo28uB3v"
 
 	accountID := "4pCyvbjBwC5LENTpceEfLpwvTtNk6zRb5QxDMiiaWoRq"
-	to := "2YARdSbYnAriqdAu2rauNr3gvbEoqhdnTt"
+	//to := "2YARdSbYnAriqdAu2rauNr3gvbEoqhdnTt"
+	to := "2SJKhheUwpeb3yCBtm93655euA6WsQ9JwW"
 
 	testGetAssetsAccountBalance(tm, walletID, accountID)
 
-	rawTx, err := testCreateTransactionStep(tm, walletID, accountID, to, "0.02", "", nil)
+	rawTx, err := testCreateTransactionStep(tm, walletID, accountID, to, "1.23", "", nil)
 	if err != nil {
 		return
 	}

@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"github.com/blocktree/bitcore-btx-adapter/bitcore_btx"
+	"github.com/assetsadapterstore/bitcore-btx-adapter/bitcore_btx"
 )
 
 func main() {
