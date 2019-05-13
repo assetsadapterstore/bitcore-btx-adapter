@@ -17,14 +17,18 @@ github.com/beego/x2j v0.0.0-20131220205130-a0352aadc542/go.mod h1:kSeGC/p1AbBiEp
 github.com/belogik/goes v0.0.0-20151229125003-e54d722c3aff/go.mod h1:PhH1ZhyCzHKt4uAasyx+ljRCgoezetRNf59CUtwUkqY=
 github.com/blocktree/bitcoin-adapter v1.1.5 h1:M19kBKS8SaB3lSpX2jdWnl/iD4p6rJanvaRFUhhIvpg=
 github.com/blocktree/bitcoin-adapter v1.1.5/go.mod h1:FppHhnNSH6U/2l6/RoEwNIxX5tXXb1hz6SarMkEduKU=
+github.com/blocktree/bitcoin-adapter v1.1.6/go.mod h1:0KHERBS98PXXFUhZ2MBX9usxDenNXpRUPp9mNjuevcE=
 github.com/blocktree/go-owcdrivers v1.0.4 h1:ojdUJiOD40fxuW1UrLU79RNTObtdFCMx0miwdW3T72o=
 github.com/blocktree/go-owcdrivers v1.0.4/go.mod h1:HS5S8MYW1hdN6hEmwgqu/kWyFPkxvjGN9Le0zAGmFZM=
 github.com/blocktree/go-owcdrivers v1.0.5 h1:zc9HmHEOzrHi/lvJEKKaSSDVO17P97mNi3G/72SkT7U=
 github.com/blocktree/go-owcdrivers v1.0.5/go.mod h1:HS5S8MYW1hdN6hEmwgqu/kWyFPkxvjGN9Le0zAGmFZM=
+github.com/blocktree/go-owcdrivers v1.0.7 h1:OGauyLjo6iZIOit2s0SOtoeLnktkHlqbjVgIe7jZsFY=
+github.com/blocktree/go-owcdrivers v1.0.7/go.mod h1:HS5S8MYW1hdN6hEmwgqu/kWyFPkxvjGN9Le0zAGmFZM=
 github.com/blocktree/go-owcrypt v1.0.1 h1:hTqRN7mH2L0mVzHcL9jE0YM7B4oUFiDvksLEpam7oU8=
 github.com/blocktree/go-owcrypt v1.0.1/go.mod h1:5FCinL/4XVEqbmAFTOUgfMJVNJEw6WzVy624qsxzZC8=
 github.com/blocktree/openwallet v1.4.1 h1:Erju/SLK3qjU9OZ4JEsrUBD6wfvC0PBC+28rhy+BLM4=
 github.com/blocktree/openwallet v1.4.1/go.mod h1:jStJigV8cNTOmvzvWJ4bdjXhiRvtQtSh++uJxSZRcb0=
+github.com/blocktree/openwallet v1.4.2/go.mod h1:jStJigV8cNTOmvzvWJ4bdjXhiRvtQtSh++uJxSZRcb0=
 github.com/bndr/gotabulate v1.1.2 h1:yC9izuZEphojb9r+KYL4W9IJKO/ceIO8HDwxMA24U4c=
 github.com/bndr/gotabulate v1.1.2/go.mod h1:0+8yUgaPTtLRTjf49E8oju7ojpU11YmXyvq1LbPAb3U=
 github.com/bradfitz/gomemcache v0.0.0-20180710155616-bc664df96737/go.mod h1:PmM6Mmwb0LSuEubjR8N7PtNe1KxZLtOUHtbeikc5h60=
@@ -70,6 +74,7 @@ github.com/fsnotify/fsnotify v1.4.7/go.mod h1:jwhsz4b93w/PPRr/qN1Yymfu8t87LnFCMo
 github.com/go-redis/redis v6.14.2+incompatible/go.mod h1:NAIEuMOZ/fxfXJIrKDQDz8wamY7mA7PouImQ2Jvg6kA=
 github.com/go-redis/redis v6.15.2+incompatible/go.mod h1:NAIEuMOZ/fxfXJIrKDQDz8wamY7mA7PouImQ2Jvg6kA=
 github.com/go-sql-driver/mysql v1.4.1/go.mod h1:zAC/RDZ24gD3HViQzih4MyKcchzm+sOG5ZlKdlhCg5w=
+github.com/go-stack/stack v1.8.0/go.mod h1:v0f6uXyyMGvRgIKkXu+yp6POWl0qKG85gN/melR3HDY=
 github.com/gogo/protobuf v1.1.1/go.mod h1:r8qH/GZQm5c6nD/R0oafs1akxWv10x8SbQlK7atdtwQ=
 github.com/golang/protobuf v1.2.0/go.mod h1:6lQm79b+lXiMfvg/cZm0SGofjICqVBUtrP5yJMmIC1U=
 github.com/golang/protobuf v1.3.1 h1:YF8+flBXS5eO826T4nzqPrxfhQThhXl0YzfuUPu4SBg=

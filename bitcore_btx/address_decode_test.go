@@ -17,7 +17,7 @@ package bitcore_btx
 
 import (
 	"encoding/hex"
-	"github.com/blocktree/bitcore-btx-adapter/bitcore_btx_addrdec"
+	"github.com/assetsadapterstore/bitcore-btx-adapter/bitcore_btx_addrdec"
 	"testing"
 )
 
@@ -51,7 +51,7 @@ func TestAddressDecoder_ScriptPubKeyToBech32Address(t *testing.T) {
 
 	scriptPubKey, _ := hex.DecodeString("002079db247b3da5d5e33e036005911b9341a8d136768a001e9f7b86c5211315e3e1")
 
-	addr, err := ScriptPubKeyToBech32Address(scriptPubKey, false)
+	addr, err := tw.Decoder.ScriptPubKeyToBech32Address(scriptPubKey)
 	if err != nil {
 		t.Errorf("ScriptPubKeyToBech32Address failed unexpected error: %v\n", err)
 		return

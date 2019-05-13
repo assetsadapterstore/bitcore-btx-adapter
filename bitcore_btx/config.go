@@ -24,6 +24,6 @@ const (
 )
 
 var (
-	MainNetAddressPrefix = btcTransaction.AddressPrefix{byte(0x03), byte(0x7d), "btx"}
+	MainNetAddressPrefix = btcTransaction.AddressPrefix{[]byte{0x03}, []byte{0x7d}, "btx"}
 	TestNetAddressPrefix = btcTransaction.BTCTestnetAddressPrefix
 )

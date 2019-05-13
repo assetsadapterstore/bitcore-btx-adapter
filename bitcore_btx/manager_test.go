@@ -17,7 +17,7 @@ package bitcore_btx
 
 import (
 	"fmt"
-	"github.com/blocktree/bitcoin-adapter/bitcoin"
+	"github.com/astaxie/beego/config"
 	"github.com/blocktree/openwallet/log"
 	"math"
 	"path/filepath"
@@ -34,19 +34,23 @@ var (
 
 func init() {
 
-	tw = NewWalletManager()
+	tw = testNewWalletManager()
+}
 
-	tw.Config.ServerAPI = ""
-	tw.Config.RpcUser = ""
-	tw.Config.RpcPassword = ""
-	tw.Config.IsTestNet = false
-	token := bitcoin.BasicAuth(tw.Config.RpcUser, tw.Config.RpcPassword)
-	tw.WalletClient = bitcoin.NewClient(tw.Config.ServerAPI, token, true)
+func testNewWalletManager() *WalletManager {
+	wm := NewWalletManager()
 
-	explorerURL := ""
-	tw.ExplorerClient = bitcoin.NewExplorer(explorerURL, true)
-
-	tw.Config.RPCServerType = bitcoin.RPCServerCore
+	//读取配置
+	absFile := filepath.Join("conf", "conf.ini")
+	//log.Debug("absFile:", absFile)
+	c, err := config.NewConfig("ini", absFile)
+	if err != nil {
+		return nil
+	}
+	wm.LoadAssetsConfig(c)
+	wm.ExplorerClient.Debug = false
+	//wm.WalletClient.Debug = true
+	return wm
 }
 
 func TestWalletManager(t *testing.T) {
@@ -415,15 +419,19 @@ func TestGetBlockChainInfo(t *testing.T) {
 }
 
 func TestListUnspent(t *testing.T) {
-	utxos, err := tw.ListUnspent(0, "LV9Cc8ari9qDzx3URdvb4ofZf8mThoxCZa")
+	utxos, err := tw.ListUnspent(0, "")
 	if err != nil {
 		t.Errorf("ListUnspent failed unexpected error: %v\n", err)
 		return
 	}
-
+	totalBalance := decimal.Zero
 	for _, u := range utxos {
 		t.Logf("ListUnspent %s: %s = %s\n", u.Address, u.AccountID, u.Amount)
+		amount, _ := decimal.NewFromString(u.Amount)
+		totalBalance = totalBalance.Add(amount)
 	}
+
+	t.Logf("totalBalance: %s \n", totalBalance.String())
 }
 
 //func TestGetAddressesFromLocalDB(t *testing.T) {
