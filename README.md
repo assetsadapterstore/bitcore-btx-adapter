@@ -23,6 +23,8 @@ rpcUser = "user"
 rpcPassword = "password"
 # Is network test?
 isTestNet = false
+# minimum transaction fees
+minFees = "0.00001"
 
 ```
 
