@@ -418,8 +418,26 @@ func TestGetBlockChainInfo(t *testing.T) {
 	}
 }
 
+func TestListUnspentPer(t *testing.T) {
+
+	for i, addr := range test_addrs {
+		utxos, err := tw.ListUnspent(0, addr)
+		if err != nil {
+			t.Errorf("ListUnspent failed unexpected error: %v\n", err)
+			return
+		}
+		totalBalance := decimal.Zero
+		for _, u := range utxos {
+			amount, _ := decimal.NewFromString(u.Amount)
+			totalBalance = totalBalance.Add(amount)
+		}
+
+		t.Logf("%s[%d]: %s \n", addr, i, totalBalance.String())
+	}
+}
+
 func TestListUnspent(t *testing.T) {
-	utxos, err := tw.ListUnspent(0, "")
+	utxos, err := tw.ListUnspent(0, test_addrs...)
 	if err != nil {
 		t.Errorf("ListUnspent failed unexpected error: %v\n", err)
 		return
