@@ -1,1 +1,4 @@
-bitcore_btx/conf
+.idea
+*.db
+*.key
+*.ini
